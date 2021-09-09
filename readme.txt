@@ -1,5 +1,5 @@
-=== Twenty Twenty-One ===
-Contributors: wordpressdotorg
+=== ors-wp-theme ===
+Contributors: Oxford-Recording-Society,wordpressdotorg
 Requires at least: 5.3
 Tested up to: 5.8
 Requires PHP: 5.6
@@ -9,11 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush.
-
-With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine.
-
-Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.
+A custom theme for Oxford Recording Society, based on Twenty Twenty-One.
 
 == Installation ==
 
