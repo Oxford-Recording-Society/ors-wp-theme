@@ -19,6 +19,25 @@ Twenty Twenty-One WordPress Theme, (C) 2020 WordPress.org
 Twenty Twenty-One is distributed under the terms of the GNU GPL.
 */
 
+/* ORS-WP-THEME CUSTOM DIRECTIVES */
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CRoboto+Mono:300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic&display=swap');
+
+@font-face {
+  font-family: 'Bernoru';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://ors.dev.cc/wp-content/themes/ors-wp-theme/assets/fonts/Bernoru-BlackMedium.woff) format('woff');
+}
+@font-face {
+  font-family: 'Bernoru';
+  font-style: normal;
+  font-weight: 900;
+  src: url(https://ors.dev.cc/wp-content/themes/ors-wp-theme/assets/fonts/Bernoru-BlackExpanded.woff) format('woff');
+}
+
+
+
 /**
  * SETTINGS
  * File-header..........The file header for the themes style.css file.
@@ -100,6 +119,9 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 /* Variables */
 :root {
 
+	--font-headings: Bernoru;
+	--font-base: Roboto Mono;
+
 	/* Font Family */
 	--global--font-primary: var(--font-headings, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
 	--global--font-secondary: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
@@ -142,7 +164,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--heading--line-height-h2: var(--global--line-height-heading);
 	--heading--line-height-h1: var(--global--line-height-page-title);
 	--heading--font-weight: normal;
-	--heading--font-weight-page-title: 300;
+	--heading--font-weight-page-title: 900;
 	--heading--font-weight-strong: 600;
 
 	/* Block: Latest posts */
