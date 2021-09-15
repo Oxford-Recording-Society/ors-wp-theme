@@ -267,7 +267,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--branding--description--font-size: var(--global--font-size-sm);
 	--branding--description--font-family: var(--global--font-secondary);
 	--branding--logo--max-width: 300px;
-	--branding--logo--max-height: 100px;
+	--branding--logo--max-height: 85px;
 	--branding--logo--max-width-mobile: 96px;
 	--branding--logo--max-height-mobile: 96px;
 
@@ -286,7 +286,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--primary-nav--color-link: var(--global--color-primary);
 	--primary-nav--color-link-hover: var(--global--color-primary-hover);
 	--primary-nav--color-text: var(--global--color-primary);
-	--primary-nav--padding: calc(0.66 * var(--global--spacing-unit));
+	--primary-nav--padding: 15px;
 	--primary-nav--border-color: var(--global--color-primary);
 
 	/* Pagination */
@@ -797,12 +797,15 @@ template {
 .comments-pagination,
 .post-navigation,
 .site-footer,
-.site-header,
 .alignwide,
 .wide-max-width {
 	max-width: var(--responsive--alignwide-width);
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.site-header {
+	padding: 80px 96px;
 }
 
 .alignfull,
@@ -3829,7 +3832,7 @@ table.wp-calendar-table caption {
 @media only screen and (min-width: 822px) {
 
 	.site-header {
-		padding-top: calc(2.4 * var(--global--spacing-vertical));
+		padding-top: 80px;
 	}
 }
 
@@ -3847,7 +3850,6 @@ table.wp-calendar-table caption {
 
 	.site-branding {
 		margin-right: initial;
-		margin-top: 4px;
 	}
 }
 
@@ -3892,10 +3894,6 @@ table.wp-calendar-table caption {
 
 .site-title > a {
 	text-decoration-color: var(--global--color-secondary);
-}
-
-.site-logo {
-	margin: calc(var(--global--spacing-vertical) / 2) 0;
 }
 
 .site-header > .site-logo {
@@ -4779,7 +4777,9 @@ h1.page-title {
 
 	.primary-navigation {
 		position: relative;
-		margin-left: auto;
+		margin-left: 36px;
+		margin-bottom:30px;
+		padding-left: 15px;
 	}
 
 	.primary-navigation > .primary-menu-container {
@@ -5001,6 +5001,7 @@ h1.page-title {
 	font-weight: var(--primary-nav--font-weight);
 	padding: var(--primary-nav--padding) 0;
 	text-decoration: none;
+	letter-spacing: 0.2px;
 }
 @media only screen and (min-width: 482px) {
 
