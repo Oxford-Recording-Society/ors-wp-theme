@@ -196,7 +196,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 
 	/* Headings */
 	--global--color-primary-hover: var(--global--color-primary);
-	--global--color-background: var(--global--color-green);
+	--global--color-background: rgb(22,22,22);
 
 	/* Mint, default body background */
 	--global--color-border: var(--global--color-primary);

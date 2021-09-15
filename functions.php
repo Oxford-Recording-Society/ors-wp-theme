@@ -195,7 +195,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		add_theme_support(
 			'custom-background',
 			array(
-				'default-color' => 'd1e4dd',
+				'default-color' => '161616',
 			)
 		);
 
