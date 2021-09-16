@@ -3872,6 +3872,8 @@ table.wp-calendar-table caption {
 
 	.site-header {
 		padding-top: 80px;
+		position: fixed;
+		width: 100%;
 	}
 }
 
@@ -4819,6 +4821,7 @@ h1.page-title {
 		margin-left: 36px;
 		margin-bottom:30px;
 		padding-left: 15px;
+		flex-grow: 1;
 	}
 
 	.primary-navigation > .primary-menu-container {
