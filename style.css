@@ -33,10 +33,49 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
   font-family: 'Bernoru';
   font-style: normal;
   font-weight: 900;
-  src: url(https://ors.dev.cc/wp-content/themes/ors-wp-theme/assets/fonts/Bernoru-BlackExpanded.woff) format('woff');
+/* Header navbar right */
+#secondary-menu-list{
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	max-width: none;
+	position: relative;
+	padding-top: var(--primary-nav--padding);
 }
 
+#secondary-menu-list a{
+	background-color: #ffffff00;
+	border: 2px solid #fff;
+	display: inline-block;
+	font-family: 'Lulo clean one', 'Roboto Mono', sans-serif;
+	font-size: 0.625rem; /*10px*/
+	font-weight: 400;
+	line-height:20px;
+	margin: 0 8px;
+	min-height:32px;
+	padding: 4px 15px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transition: background-color 200ms ease-out, color 200ms ease-out;
+	transition: background-color 200ms ease-out, color 200ms ease-out;
+	white-space: nowrap;
+	z-index: 10;
+}
 
+#secondary-menu-list a:hover {
+	background-color: #fff;
+	color: #000;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.site-nav-spacing{
+	height:255px;
+}
 
 /**
  * SETTINGS

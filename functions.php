@@ -73,8 +73,9 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary menu', 'twentytwentyone' ),
-				'footer'  => __( 'Secondary menu', 'twentytwentyone' ),
+				'primary' => esc_html__( 'Header menu (left)', 'twentytwentyone' ),
+				'secondary' => esc_html__( 'Header menu (right)', 'twentytwentyone' ),
+				'footer'  => __( 'Footer menu', 'twentytwentyone' ),
 			)
 		);
 
