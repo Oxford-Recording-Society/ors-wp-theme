@@ -19,20 +19,60 @@ Twenty Twenty-One WordPress Theme, (C) 2020 WordPress.org
 Twenty Twenty-One is distributed under the terms of the GNU GPL.
 */
 
-/* ORS-WP-THEME CUSTOM DIRECTIVES */
+/* ORS-WP-THEME CUSTOM RULES */
 
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CRoboto+Mono:300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic&display=swap');
-
+/* Imports (fonts etc) */
+@import url('http://fonts.googleapis.com/css?family=Roboto+Mono:300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic&display=swap');
 @font-face {
   font-family: 'Bernoru';
   font-style: normal;
   font-weight: 500;
-  src: url(https://ors.dev.cc/wp-content/themes/ors-wp-theme/assets/fonts/Bernoru-BlackMedium.woff) format('woff');
+  src: url(/wp-content/themes/ors-wp-theme/assets/fonts/Bernoru-BlackMedium.woff) format('woff');
 }
 @font-face {
   font-family: 'Bernoru';
   font-style: normal;
   font-weight: 900;
+  src: url(/wp-content/themes/ors-wp-theme/assets/fonts/Bernoru-BlackExpanded.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lulo clean one';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/wp-content/themes/ors-wp-theme/assets/fonts/Lulo-Clean-One.otf);
+}
+
+/* Misc */
+h1,.primary-menu-container, .wp-block-button{
+	text-transform:uppercase;
+}
+
+/* Header navbar(s) */
+header{
+	z-index: 10;
+}
+.custom-logo{
+	pointer-events: none;
+}
+
+.current-menu-item a::before{
+	content: '//';
+}
+
+/* Header navbar left */
+#primary-menu-list a{
+	color: #cfcfcf;
+	text-decoration: none;
+	transition: transform 100ms ease-out, color 100ms ease-out;
+}
+#primary-menu-list .current-menu-item a {
+	color: #fff;
+}
+#primary-menu-list a:hover{
+	color: #fff;
+	transform: translatey(-0.3em);
+}
+
 /* Header navbar right */
 #secondary-menu-list{
 	display: flex;
@@ -76,6 +116,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 .site-nav-spacing{
 	height:255px;
 }
+/* END ORS CUSTOM RULES */
 
 /**
  * SETTINGS
@@ -166,7 +207,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--global--font-secondary: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
 
 	/* Font Size */
-	--global--font-size-base: 1.25rem;
+	--global--font-size-base: 1rem;
 	--global--font-size-xs: 1rem;
 	--global--font-size-sm: 1.125rem;
 	--global--font-size-md: 1.25rem;
@@ -174,7 +215,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--global--font-size-xl: 2.25rem;
 	--global--font-size-xxl: 4rem;
 	--global--font-size-xxxl: 5rem;
-	--global--font-size-page-title: var(--global--font-size-xxl);
+	--global--font-size-page-title: var(--global--font-size-xl);
 	--global--letter-spacing: normal;
 
 	/* Line Height */
@@ -228,7 +269,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--global--color-white: #fff;
 	--global--color-white-50: rgba(255, 255, 255, 0.5);
 	--global--color-white-90: rgba(255, 255, 255, 0.9);
-	--global--color-primary: var(--global--color-dark-gray);
+	--global--color-primary: var(--global--color-white);
 
 	/* Body text color, site title, footer text color. */
 	--global--color-secondary: var(--global--color-gray);
@@ -313,19 +354,19 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	/* Main navigation */
 	--primary-nav--font-family: var(--global--font-secondary);
 	--primary-nav--font-family-mobile: var(--global--font-primary);
-	--primary-nav--font-size: var(--global--font-size-md);
+	--primary-nav--font-size: 1rem;
 	--primary-nav--font-size-sub-menu: var(--global--font-size-xs);
 	--primary-nav--font-size-mobile: var(--global--font-size-sm);
 	--primary-nav--font-size-sub-menu-mobile: var(--global--font-size-sm);
 	--primary-nav--font-size-button: var(--global--font-size-xs);
 	--primary-nav--font-style: normal;
 	--primary-nav--font-style-sub-menu-mobile: normal;
-	--primary-nav--font-weight: normal;
+	--primary-nav--font-weight: 300;
 	--primary-nav--font-weight-button: 500;
 	--primary-nav--color-link: var(--global--color-primary);
 	--primary-nav--color-link-hover: var(--global--color-primary-hover);
 	--primary-nav--color-text: var(--global--color-primary);
-	--primary-nav--padding: 15px;
+	--primary-nav--padding: 16px;
 	--primary-nav--border-color: var(--global--color-primary);
 
 	/* Pagination */
@@ -3859,9 +3900,6 @@ table.wp-calendar-table caption {
 	row-gap: var(--global--spacing-vertical);
 }
 
-.wp-custom-logo .site-header {
-	align-items: center;
-}
 @media only screen and (min-width: 482px) {
 
 	.site-header {
