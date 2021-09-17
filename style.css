@@ -116,6 +116,26 @@ header{
 .site-nav-spacing{
 	height:255px;
 }
+
+/* Header title */
+#main{
+	padding-top: 0;
+}
+.entry-header{
+	background-image: linear-gradient(180deg, hsl(var(--header-gradient-hue),77%,56%) 31%, hsl(calc(var(--header-gradient-hue) - 36),89%,60%));
+	/* background-image: linear-gradient(180deg, hsl(24,77%,56%) 31%, hsl(348,89%,60%)); */
+	padding-top:255px; /*to fit the navbar*/
+}
+.header-title{
+	line-height: 0.35em;
+	text-align: center;
+}
+.header-title-outline{
+	color:transparent;
+	-webkit-text-stroke: 0.5px #fff;
+	user-select: none;
+}
+
 /* Projects list (table) */
 .display-posts-listing.grid {
 	display: flex;
@@ -281,7 +301,7 @@ header{
 	--global--font-size-xl: 2.25rem;
 	--global--font-size-xxl: 4rem;
 	--global--font-size-xxxl: 5rem;
-	--global--font-size-page-title: var(--global--font-size-xl);
+	--global--font-size-page-title: var(--global--font-size-xxl);
 	--global--letter-spacing: normal;
 
 	/* Line Height */
@@ -309,7 +329,7 @@ header{
 	--heading--line-height-h3: var(--global--line-height-heading);
 	--heading--line-height-h2: var(--global--line-height-heading);
 	--heading--line-height-h1: var(--global--line-height-page-title);
-	--heading--font-weight: normal;
+	--heading--font-weight: 900;
 	--heading--font-weight-page-title: 900;
 	--heading--font-weight-strong: 600;
 
@@ -1169,7 +1189,7 @@ template {
 .page-content > *:last-child,
 .comment-content > *:last-child,
 .widget > *:last-child {
-	margin-bottom: 0;
+	margin-bottom: 100px;
 }
 
 /*
@@ -4210,6 +4230,9 @@ table.wp-calendar-table caption {
 	border-bottom: 3px solid var(--global--color-border);
 	padding-bottom: calc(2 * var(--global--spacing-vertical));
 	margin-bottom: calc(3 * var(--global--spacing-vertical));
+	margin-left: 0;
+	margin-right: 0;
+	max-width: unset;
 }
 
 .home .entry-header {
