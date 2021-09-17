@@ -381,11 +381,11 @@ header{
 	--button--color-text-active: var(--global--color-secondary);
 	--button--color-background: var(--global--color-secondary);
 	--button--color-background-active: var(--global--color-background);
-	--button--font-family: var(--global--font-primary);
-	--button--font-size: var(--global--font-size-base);
+	--button--font-family: 'Lulo clean one';
+	--button--font-size: 0.8rem;
 	--button--font-weight: 500;
 	--button--line-height: 1.5;
-	--button--border-width: 3px;
+	--button--border-width: 2px;
 	--button--border-radius: 0;
 	--button--padding-vertical: 15px;
 	--button--padding-horizontal: calc(2 * var(--button--padding-vertical));
@@ -1901,11 +1901,15 @@ a:hover {
 .site .button,
 button,
 input[type=submit],
+input[type=button],
 input[type=reset],
 .wp-block-search .wp-block-search__button,
 .wp-block-button .wp-block-button__link,
-.wp-block-file a.wp-block-file__button {
-	border: var(--button--border-width) solid transparent;
+.wp-block-file a.wp-block-file__button,
+.um-button {
+	border: var(--button--border-width) solid var(--global--color-white);
+	color: var(--global--color-white);
+	background-color: var(--global--color-background);
 	border-radius: var(--button--border-radius);
 	cursor: pointer;
 	font-weight: var(--button--font-weight);
