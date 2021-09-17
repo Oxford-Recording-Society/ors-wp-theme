@@ -116,6 +116,72 @@ header{
 .site-nav-spacing{
 	height:255px;
 }
+/* Projects list (table) */
+.display-posts-listing.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:flex-start;
+	max-width: 1280px !important;
+}
+
+.display-posts-listing .listing-item{
+	border: solid 1px #fff;
+	border-bottom-left-radius: 20px;
+	margin:8px;
+	padding: 10px 12px;
+	width:400px;
+}
+
+.display-posts-listing.grid .title {
+	display: block;
+	margin-bottom: 8px;
+	padding-top: 6px;
+	padding-bottom: 16px;
+	border-bottom: 1px dashed #fff;
+	font-family: 'Lulo clean one', sans-serif;
+	color: #fff;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+}
+.display-posts-listing.grid .title:hover {
+	text-decoration: underline;
+}
+
+.display-posts-listing.grid .author {
+	color: #dbdbdb;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: flex;
+	align-items: flex-end;
+	margin-bottom:8px;
+	text-decoration: none;
+}
+.display-posts-listing.grid .author:hover {
+	text-decoration: underline;
+}
+.display-posts-listing.grid .author_title {
+	display: inline-block;
+}
+
+.display-posts-listing.grid .avatar {
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	margin-right: 8px;
+	background-color: white;
+}
+
+.display-posts-listing .excerpt {
+	display: block;
+	color: #afaeae;
+	line-height: 19px;
+	font-weight: 300;
+	text-align: justify;
+}
+
 /* END ORS CUSTOM RULES */
 
 /**
