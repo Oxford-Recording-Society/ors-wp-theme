@@ -23,7 +23,7 @@ $hue = ($val/255) * 360;
   </span>
   <?php echo $title; ?>
 </h1>
-<div class="marquee"><?php
+<div class="header-marquee"><?php
 for ($x = 0; $x <= 20; $x++) {
   echo $title ." // ORS&nbsp;&nbsp;&nbsp;";
 }

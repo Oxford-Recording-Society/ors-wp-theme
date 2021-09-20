@@ -135,7 +135,7 @@ header{
 	-webkit-text-stroke: 0.5px #fff;
 	user-select: none;
 }
-.marquee{
+.header-marquee{
 	color:#333;
 	display: flex;
 	position: static;
