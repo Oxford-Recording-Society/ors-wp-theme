@@ -202,6 +202,27 @@ header{
 	text-align: justify;
 }
 
+/* Members list college styling*/
+.um-member-metaline-ors_member_college{
+	display: flex;
+	gap: 5px;
+	padding-top: 8px !important;
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 8px !important;
+}
+
+.um-member-metaline-ors_member_college strong {
+	display: none !important;
+}
+.um-member-metaline-ors_member_college:before{
+	content: "";
+	display: inline-block;
+	background-image: url('/wp-content/themes/ors-wp-theme/assets/images/college-icon.png');
+	height: 16px;
+	width: 16px;
+	background-size: 16px;
+}
+
 /* END ORS CUSTOM RULES */
 
 /**
