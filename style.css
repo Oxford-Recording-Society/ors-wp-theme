@@ -22,7 +22,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 /* ORS-WP-THEME CUSTOM RULES */
 
 /* Imports (fonts etc) */
-@import url('http://fonts.googleapis.com/css?family=Roboto+Mono:300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic&display=swap');
 @font-face {
   font-family: 'Bernoru';
   font-style: normal;
@@ -43,7 +43,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 }
 
 /* Misc */
-h1,.primary-menu-container, .wp-block-button{
+.header-title,.primary-menu-container, .wp-block-button{
 	text-transform:uppercase;
 }
 
