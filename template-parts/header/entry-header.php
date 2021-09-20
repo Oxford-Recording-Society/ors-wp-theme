@@ -23,6 +23,11 @@ $hue = ($val/255) * 360;
   </span>
   <?php echo $title; ?>
 </h1>
+<div class="marquee"><?php
+for ($x = 0; $x <= 20; $x++) {
+  echo $title ." // ORS&nbsp;&nbsp;&nbsp;";
+}
+?></div>
 <style>
 :root{
   --header-gradient-hue: <?php echo $hue; ?>;
