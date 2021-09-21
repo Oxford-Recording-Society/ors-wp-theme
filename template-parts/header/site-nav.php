@@ -21,29 +21,29 @@
 				</span>
 			</button><!-- #primary-mobile-menu -->
 		</div><!-- .menu-button-container -->
+		<div class="primary-menu-container">
 		<?php
 		wp_nav_menu(
 			array(
 				'theme_location'  => 'primary',
 				'menu_class'      => 'menu-wrapper',
-				'container_class' => 'primary-menu-container',
+				'container'       => false,
 				'items_wrap'      => '<ul id="primary-menu-list" class="%2$s">%3$s</ul>',
 				'fallback_cb'     => false,
 			)
 		);
 		?>
-	</nav><!-- #site-navigation -->
-	<nav id="site-navigation" class="secondary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Secondary menu', 'twentytwentyone' ); ?>">
 		<?php
 		wp_nav_menu(
 			array(
 				'theme_location'  => 'secondary',
 				'menu_class'      => 'menu-wrapper',
-				'container_class' => 'secondary-menu-container',
+				'container'       => false,
 				'items_wrap'      => '<ul id="secondary-menu-list" class="%2$s">%3$s</ul>',
 				'fallback_cb'     => false,
 			)
 		);
 		?>
+		</div>
 	</nav><!-- #site-navigation -->
 <?php endif; ?>

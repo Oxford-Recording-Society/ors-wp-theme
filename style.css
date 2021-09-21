@@ -82,7 +82,8 @@ header{
 	margin: 0;
 	max-width: none;
 	position: relative;
-	padding-top: var(--primary-nav--padding);
+	/* padding-top: var(--primary-nav--padding); */
+	padding-left:0;
 }
 
 #secondary-menu-list a{
@@ -93,7 +94,7 @@ header{
 	font-size: 0.625rem; /*10px*/
 	font-weight: 400;
 	line-height:20px;
-	margin: 0 8px;
+	margin: var(--primary-nav--padding) 8px 0;
 	min-height:32px;
 	padding: 4px 15px;
 	position: relative;
@@ -1010,8 +1011,11 @@ template {
 }
 
 .site-header {
-	padding: 80px 96px;
+	padding: 80px 40px;
+	position:absolute;
+	width: 100%;
 }
+
 
 .alignfull,
 .wp-block-group .wp-block-group__inner-container > *.alignfull,
@@ -4025,7 +4029,7 @@ table.wp-calendar-table caption {
 .site-header {
 	display: flex;
 	align-items: flex-start;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	row-gap: var(--global--spacing-vertical);
 }
 
@@ -4038,9 +4042,7 @@ table.wp-calendar-table caption {
 @media only screen and (min-width: 822px) {
 
 	.site-header {
-		padding-top: 80px;
-		position: fixed;
-		width: 100%;
+		padding: 80px 96px;
 	}
 }
 
@@ -5002,6 +5004,9 @@ h1.page-title {
 		background-color: transparent;
 		overflow: initial;
 		transform: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
 	}
 
 	.primary-navigation #toggle-menu {
@@ -5022,7 +5027,7 @@ h1.page-title {
 }
 
 .primary-navigation > div > .menu-wrapper {
-	display: flex;
+	display: inline-flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	list-style: none;
@@ -5034,7 +5039,7 @@ h1.page-title {
 @media only screen and (max-width: 481px) {
 
 	.primary-navigation > div > .menu-wrapper {
-		padding-bottom: 100px;
+		padding-bottom: 16px;
 	}
 
 	.primary-navigation > div > .menu-wrapper ul {
@@ -5211,7 +5216,7 @@ h1.page-title {
 	font-family: var(--primary-nav--font-family-mobile);
 	font-size: var(--primary-nav--font-size-mobile);
 	font-weight: var(--primary-nav--font-weight);
-	padding: var(--primary-nav--padding) 0;
+	padding: var(--primary-nav--padding) 0 0;
 	text-decoration: none;
 	letter-spacing: 0.2px;
 }
