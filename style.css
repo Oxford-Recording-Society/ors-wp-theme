@@ -473,7 +473,7 @@ header{
 	--branding--description--font-size: var(--global--font-size-sm);
 	--branding--description--font-family: var(--global--font-secondary);
 	--branding--logo--max-width: 300px;
-	--branding--logo--max-height: 85px;
+	--branding--logo--max-height: 50px;
 	--branding--logo--max-width-mobile: 96px;
 	--branding--logo--max-height-mobile: 96px;
 
@@ -4042,7 +4042,7 @@ table.wp-calendar-table caption {
 @media only screen and (min-width: 822px) {
 
 	.site-header {
-		padding: 80px 96px;
+		padding: 67px 74px;
 	}
 }
 
