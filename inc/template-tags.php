@@ -86,15 +86,9 @@ if ( ! function_exists( 'twenty_twenty_one_entry_meta_footer' ) ) {
 			twenty_twenty_one_posted_on();
 
 			// Edit post link.
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post. Only visible to screen readers. */
-					esc_html__( 'Edit %s', 'twentytwentyone' ),
-					'<span class="screen-reader-text">' . get_the_title() . '</span>'
-				),
-				'<span class="edit-link">',
-				'</span><br>'
-			);
+			echo
+			'<span class="edit-link"><a class="post-edit-link" href="/edit-post?pid='
+			. get_post(0)->ID . '">Edit</a></span><br>';
 
 			if ( has_category() || has_tag() ) {
 
@@ -129,15 +123,10 @@ if ( ! function_exists( 'twenty_twenty_one_entry_meta_footer' ) ) {
 			// Posted by.
 			twenty_twenty_one_posted_by();
 			// Edit post link.
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post. Only visible to screen readers. */
-					esc_html__( 'Edit %s', 'twentytwentyone' ),
-					'<span class="screen-reader-text">' . get_the_title() . '</span>'
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
+			echo
+			'<span class="edit-link"><a class="post-edit-link" href="/edit-post?pid='
+			. get_post(0)->ID . '">Edit</a></span><br>';
+
 			echo '</div>';
 
 			if ( has_category() || has_tag() ) {

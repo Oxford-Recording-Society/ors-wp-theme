@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 /*
-Theme Name: Twenty Twenty-One
-Theme URI: https://wordpress.org/themes/twentytwentyone/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine. Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.
+Theme Name: ors-wp-theme
+Theme URI: https://github.com/Oxford-Recording-Society/ors-wp-theme/
+Author: Oxford Recording Society
+Author URI: https://oxfordrecordingsoc.com
+Description: A custom theme for Oxford Recording Society, based on Twenty Twenty-One.
 Requires at least: 5.3
 Tested up to: 5.8
 Requires PHP: 5.6
@@ -18,6 +18,231 @@ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, 
 Twenty Twenty-One WordPress Theme, (C) 2020 WordPress.org
 Twenty Twenty-One is distributed under the terms of the GNU GPL.
 */
+
+/* ORS-WP-THEME CUSTOM RULES */
+
+/* Imports (fonts etc) */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic&display=swap');
+@font-face {
+  font-family: 'Bernoru';
+  font-style: normal;
+  font-weight: 500;
+  src: url(/wp-content/themes/ors-wp-theme/assets/fonts/Bernoru-BlackMedium.woff) format('woff');
+}
+@font-face {
+  font-family: 'Bernoru';
+  font-style: normal;
+  font-weight: 900;
+  src: url(/wp-content/themes/ors-wp-theme/assets/fonts/Bernoru-BlackExpanded.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lulo clean one';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/wp-content/themes/ors-wp-theme/assets/fonts/Lulo-Clean-One.otf);
+}
+
+/* Misc */
+.header-title,.primary-menu-container, .wp-block-button{
+	text-transform:uppercase;
+}
+
+/* Header navbar(s) */
+header{
+	z-index: 10;
+}
+.custom-logo{
+	pointer-events: none;
+}
+
+.current-menu-item a::before{
+	content: '//';
+}
+
+/* Header navbar left */
+#primary-menu-list a{
+	color: #cfcfcf;
+	text-decoration: none;
+	transition: transform 100ms ease-out, color 100ms ease-out;
+}
+#primary-menu-list .current-menu-item a {
+	color: #fff;
+}
+#primary-menu-list a:hover{
+	color: #fff;
+	transform: translatey(-0.3em);
+}
+
+/* Header navbar right */
+#secondary-menu-list{
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	max-width: none;
+	position: relative;
+	/* padding-top: var(--primary-nav--padding); */
+	padding-left:0;
+}
+
+#secondary-menu-list a{
+	background-color: #ffffff00;
+	border: 2px solid #fff;
+	display: inline-block;
+	font-family: 'Lulo clean one', 'Roboto Mono', sans-serif;
+	font-size: 0.625rem; /*10px*/
+	font-weight: 400;
+	line-height:20px;
+	margin: var(--primary-nav--padding) 8px 0;
+	min-height:32px;
+	padding: 4px 15px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transition: background-color 200ms ease-out, color 200ms ease-out;
+	transition: background-color 200ms ease-out, color 200ms ease-out;
+	white-space: nowrap;
+	z-index: 10;
+}
+
+#secondary-menu-list a:hover {
+	background-color: #fff;
+	color: #000;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.site-nav-spacing{
+	height:255px;
+}
+
+/* Header title */
+#main{
+	padding-top: 0;
+}
+.entry-header{
+	background-image: linear-gradient(180deg, hsl(var(--header-gradient-hue),77%,56%) 31%, hsl(calc(var(--header-gradient-hue) - 36),89%,60%));
+	/* background-image: linear-gradient(180deg, hsl(24,77%,56%) 31%, hsl(348,89%,60%)); */
+	padding-top:225px; /*to fit the navbar*/
+}
+.header-title{
+	line-height: 0.35em;
+	text-align: center;
+}
+.header-title-outline{
+	color:transparent;
+	-webkit-text-stroke: 0.5px #fff;
+	user-select: none;
+}
+.header-marquee{
+	color:#333;
+	display: flex;
+	position: static;
+	font-family: var(--entry-content--font-family);
+	font-size: 0.875rem;
+	background-color: var(--global--color-white);
+	width: 100%;
+	height: 50px;
+	margin-top: calc(4 * var(--global--spacing-vertical)) !important;
+	justify-content: flex-start;
+	align-items: center;
+	border-bottom: 1px solid var(--global--color-black);
+	white-space: nowrap;
+	overflow: hidden;
+	user-select: none;
+	text-transform: uppercase;
+}
+
+/* Projects list (table) */
+.display-posts-listing.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:flex-start;
+	max-width: 1280px !important;
+}
+
+.display-posts-listing .listing-item{
+	border: solid 1px #fff;
+	border-bottom-left-radius: 20px;
+	margin:8px;
+	padding: 10px 12px;
+	width:400px;
+}
+
+.display-posts-listing.grid .title {
+	display: block;
+	margin-bottom: 8px;
+	padding-top: 6px;
+	padding-bottom: 16px;
+	border-bottom: 1px dashed #fff;
+	font-family: 'Lulo clean one', sans-serif;
+	color: #fff;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+}
+.display-posts-listing.grid .title:hover {
+	text-decoration: underline;
+}
+
+.display-posts-listing.grid .author {
+	color: #dbdbdb;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: flex;
+	align-items: flex-end;
+	margin-bottom:8px;
+	text-decoration: none;
+}
+.display-posts-listing.grid .author:hover {
+	text-decoration: underline;
+}
+.display-posts-listing.grid .author_title {
+	display: inline-block;
+}
+
+.display-posts-listing.grid .avatar {
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	margin-right: 8px;
+	background-color: white;
+}
+
+.display-posts-listing .excerpt {
+	display: block;
+	color: #afaeae;
+	line-height: 19px;
+	font-weight: 300;
+	text-align: justify;
+}
+
+/* Members list college styling*/
+.um-member-metaline-ors_member_college{
+	display: flex;
+	gap: 5px;
+	padding-top: 8px !important;
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 8px !important;
+}
+
+.um-member-metaline-ors_member_college strong {
+	display: none !important;
+}
+.um-member-metaline-ors_member_college:before{
+	content: "";
+	display: inline-block;
+	background-image: url('/wp-content/themes/ors-wp-theme/assets/images/college-icon.png');
+	height: 16px;
+	width: 16px;
+	background-size: 16px;
+}
+
+/* END ORS CUSTOM RULES */
 
 /**
  * SETTINGS
@@ -100,12 +325,15 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 /* Variables */
 :root {
 
+	--font-headings: Bernoru;
+	--font-base: Roboto Mono;
+
 	/* Font Family */
 	--global--font-primary: var(--font-headings, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
 	--global--font-secondary: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
 
 	/* Font Size */
-	--global--font-size-base: 1.25rem;
+	--global--font-size-base: 1rem;
 	--global--font-size-xs: 1rem;
 	--global--font-size-sm: 1.125rem;
 	--global--font-size-md: 1.25rem;
@@ -141,8 +369,8 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--heading--line-height-h3: var(--global--line-height-heading);
 	--heading--line-height-h2: var(--global--line-height-heading);
 	--heading--line-height-h1: var(--global--line-height-page-title);
-	--heading--font-weight: normal;
-	--heading--font-weight-page-title: 300;
+	--heading--font-weight: 900;
+	--heading--font-weight-page-title: 900;
 	--heading--font-weight-strong: 600;
 
 	/* Block: Latest posts */
@@ -167,14 +395,14 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--global--color-white: #fff;
 	--global--color-white-50: rgba(255, 255, 255, 0.5);
 	--global--color-white-90: rgba(255, 255, 255, 0.9);
-	--global--color-primary: var(--global--color-dark-gray);
+	--global--color-primary: var(--global--color-white);
 
 	/* Body text color, site title, footer text color. */
 	--global--color-secondary: var(--global--color-gray);
 
 	/* Headings */
 	--global--color-primary-hover: var(--global--color-primary);
-	--global--color-background: var(--global--color-green);
+	--global--color-background: rgb(22,22,22);
 
 	/* Mint, default body background */
 	--global--color-border: var(--global--color-primary);
@@ -213,11 +441,11 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--button--color-text-active: var(--global--color-secondary);
 	--button--color-background: var(--global--color-secondary);
 	--button--color-background-active: var(--global--color-background);
-	--button--font-family: var(--global--font-primary);
-	--button--font-size: var(--global--font-size-base);
+	--button--font-family: 'Lulo clean one';
+	--button--font-size: 0.8rem;
 	--button--font-weight: 500;
 	--button--line-height: 1.5;
-	--button--border-width: 3px;
+	--button--border-width: 2px;
 	--button--border-radius: 0;
 	--button--padding-vertical: 15px;
 	--button--padding-horizontal: calc(2 * var(--button--padding-vertical));
@@ -245,26 +473,26 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--branding--description--font-size: var(--global--font-size-sm);
 	--branding--description--font-family: var(--global--font-secondary);
 	--branding--logo--max-width: 300px;
-	--branding--logo--max-height: 100px;
+	--branding--logo--max-height: 50px;
 	--branding--logo--max-width-mobile: 96px;
 	--branding--logo--max-height-mobile: 96px;
 
 	/* Main navigation */
 	--primary-nav--font-family: var(--global--font-secondary);
 	--primary-nav--font-family-mobile: var(--global--font-primary);
-	--primary-nav--font-size: var(--global--font-size-md);
+	--primary-nav--font-size: 1rem;
 	--primary-nav--font-size-sub-menu: var(--global--font-size-xs);
 	--primary-nav--font-size-mobile: var(--global--font-size-sm);
 	--primary-nav--font-size-sub-menu-mobile: var(--global--font-size-sm);
 	--primary-nav--font-size-button: var(--global--font-size-xs);
 	--primary-nav--font-style: normal;
 	--primary-nav--font-style-sub-menu-mobile: normal;
-	--primary-nav--font-weight: normal;
+	--primary-nav--font-weight: 300;
 	--primary-nav--font-weight-button: 500;
 	--primary-nav--color-link: var(--global--color-primary);
 	--primary-nav--color-link-hover: var(--global--color-primary-hover);
 	--primary-nav--color-text: var(--global--color-primary);
-	--primary-nav--padding: calc(0.66 * var(--global--spacing-unit));
+	--primary-nav--padding: 16px;
 	--primary-nav--border-color: var(--global--color-primary);
 
 	/* Pagination */
@@ -775,13 +1003,19 @@ template {
 .comments-pagination,
 .post-navigation,
 .site-footer,
-.site-header,
 .alignwide,
 .wide-max-width {
 	max-width: var(--responsive--alignwide-width);
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.site-header {
+	padding: 80px 40px;
+	position:absolute;
+	width: 100%;
+}
+
 
 .alignfull,
 .wp-block-group .wp-block-group__inner-container > *.alignfull,
@@ -998,7 +1232,7 @@ template {
 .page-content > *:last-child,
 .comment-content > *:last-child,
 .widget > *:last-child {
-	margin-bottom: 0;
+	margin-bottom: 100px;
 }
 
 /*
@@ -1730,11 +1964,15 @@ a:hover {
 .site .button,
 button,
 input[type=submit],
+input[type=button],
 input[type=reset],
 .wp-block-search .wp-block-search__button,
 .wp-block-button .wp-block-button__link,
-.wp-block-file a.wp-block-file__button {
-	border: var(--button--border-width) solid transparent;
+.wp-block-file a.wp-block-file__button,
+.um-button {
+	border: var(--button--border-width) solid var(--global--color-white);
+	color: var(--global--color-white);
+	background-color: var(--global--color-background);
 	border-radius: var(--button--border-radius);
 	cursor: pointer;
 	font-weight: var(--button--font-weight);
@@ -3791,13 +4029,10 @@ table.wp-calendar-table caption {
 .site-header {
 	display: flex;
 	align-items: flex-start;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	row-gap: var(--global--spacing-vertical);
 }
 
-.wp-custom-logo .site-header {
-	align-items: center;
-}
 @media only screen and (min-width: 482px) {
 
 	.site-header {
@@ -3807,7 +4042,7 @@ table.wp-calendar-table caption {
 @media only screen and (min-width: 822px) {
 
 	.site-header {
-		padding-top: calc(2.4 * var(--global--spacing-vertical));
+		padding: 67px 74px;
 	}
 }
 
@@ -3825,7 +4060,6 @@ table.wp-calendar-table caption {
 
 	.site-branding {
 		margin-right: initial;
-		margin-top: 4px;
 	}
 }
 
@@ -3870,10 +4104,6 @@ table.wp-calendar-table caption {
 
 .site-title > a {
 	text-decoration-color: var(--global--color-secondary);
-}
-
-.site-logo {
-	margin: calc(var(--global--spacing-vertical) / 2) 0;
 }
 
 .site-header > .site-logo {
@@ -4038,9 +4268,12 @@ table.wp-calendar-table caption {
 }
 
 .singular .entry-header {
-	border-bottom: 3px solid var(--global--color-border);
-	padding-bottom: calc(2 * var(--global--spacing-vertical));
+	/* border-bottom: 3px solid var(--global--color-border); */
+	/* padding-bottom: calc(2 * var(--global--spacing-vertical)); */
 	margin-bottom: calc(3 * var(--global--spacing-vertical));
+	margin-left: 0;
+	margin-right: 0;
+	max-width: unset;
 }
 
 .home .entry-header {
@@ -4757,7 +4990,10 @@ h1.page-title {
 
 	.primary-navigation {
 		position: relative;
-		margin-left: auto;
+		margin-left: 36px;
+		margin-bottom:30px;
+		padding-left: 15px;
+		flex-grow: 1;
 	}
 
 	.primary-navigation > .primary-menu-container {
@@ -4768,6 +5004,9 @@ h1.page-title {
 		background-color: transparent;
 		overflow: initial;
 		transform: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
 	}
 
 	.primary-navigation #toggle-menu {
@@ -4788,7 +5027,7 @@ h1.page-title {
 }
 
 .primary-navigation > div > .menu-wrapper {
-	display: flex;
+	display: inline-flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	list-style: none;
@@ -4800,7 +5039,7 @@ h1.page-title {
 @media only screen and (max-width: 481px) {
 
 	.primary-navigation > div > .menu-wrapper {
-		padding-bottom: 100px;
+		padding-bottom: 16px;
 	}
 
 	.primary-navigation > div > .menu-wrapper ul {
@@ -4977,8 +5216,9 @@ h1.page-title {
 	font-family: var(--primary-nav--font-family-mobile);
 	font-size: var(--primary-nav--font-size-mobile);
 	font-weight: var(--primary-nav--font-weight);
-	padding: var(--primary-nav--padding) 0;
+	padding: var(--primary-nav--padding) 0 0;
 	text-decoration: none;
+	letter-spacing: 0.2px;
 }
 @media only screen and (min-width: 482px) {
 

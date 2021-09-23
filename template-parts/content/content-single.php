@@ -14,12 +14,22 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header alignwide">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php twenty_twenty_one_post_thumbnail(); ?>
+			<h1 class="header-title">
+			<span class="header-title-outline">
+				OPPORTUNITIES
+				<br />
+				OPPORTUNITIES
+				<br />
+			</span>
+			OPPORTUNITIES
+		</h1>
 	</header><!-- .entry-header -->
+	<?php twenty_twenty_one_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
+		the_title( '<h2>', '</h2>' );
+
 		the_content();
 
 		wp_link_pages(
