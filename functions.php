@@ -1,16 +1,5 @@
 <?php
  
-include( get_stylesheet_directory() . '/shortcode-function-TermCard.php' );
-
- function tribe_get_event_website_link_label_default( $label ) {
-	$url = tribe_get_event_website_url();
-	if ( $label === $url ) {
-	  $label = 'Visit Website »';
-	}
-	return $label;
-  }
-  add_filter( 'tribe_get_event_website_link_label', 'tribe_get_event_website_link_label_default' );
-
 /**
  * Functions and definitions
  *
@@ -650,3 +639,26 @@ function twentytwentyone_add_ie_class() {
 	<?php
 }
 add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
+
+
+include( get_stylesheet_directory() . '/shortcode-function-TermCard.php' );
+
+function external_js() {
+	// Use ID of the page on which the term card is on
+	if (is_page(148)) {
+	  wp_enqueue_script( 'term-card-js', get_template_directory_uri() . '/assets/js/term-card.js');
+	}
+  }
+  
+add_action('wp_enqueue_scripts', 'external_js');
+
+function external_style() {
+
+	if (is_page(148)) {
+		wp_enqueue_style('term-card-style',
+		get_template_directory_uri() . '/assets/css/term-card.css');
+	}
+
+}
+
+add_action('wp_enqueue_scripts', 'external_style');
