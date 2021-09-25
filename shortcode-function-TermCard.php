@@ -40,27 +40,55 @@
                         $XML = new SimpleXMLElement(tribe_get_event_website_link($event));
                         $link = $XML["href"];
                     }
-                    $str = strip_tags(tribe_get_event_categories($event -> ID));
-                    
-                    $categ = preg_split('/(?=[A-Z])/',$str)[3];
 
-                    
+                    $descriptors = tribe_get_event_cat_slugs( $event -> ID );
                     
                     $content = array("title" => $event -> post_title, "start_time" => $start_time, "end_time" => $end_time,
-                    "category" => $categ, "link" => $link);
+                    "descriptors" => $descriptors, "link" => $link);
 
                     array_push($events_array[$days_diff], $content); 
                 }
 
             }
+            
+            // html output
 
-            $html_output = "<figure class='wp-block-table alignfull'><table><tbody><tr><td></td><td>Sunday</td><td>Monday</td><td>Tuesday</td>
+            $labelling_colours = array('type-speakers' => '#ed1111', 'type-panels' => '#06c920', 'type-workshops' => '#959696');
+
+            $type_text = array('type-speakers' => 'Speakers', 'type-panels' => 'Panels', 'type-workshops' => 'Workshops');
+
+            $topic_text = array('topic-music-making-performing' => 'Music Making & Performing', 'topic-music-art-media' => 'Music Art & Media',
+            'topic-music-business' => 'Music Business');
+
+            // Generate the first dropdown
+            $html_output = "<div class='dropdown' data-control='checkbox-dropdown'><label class='dropdown-label'>Select</label>
+            <div class='dropdown-list'><a href='#' data-toggle='check-all' class='dropdown-option check-all'>Check All </a>";
+
+            foreach ($type_text as $key => $value) {
+                $html_output .= "<label class='dropdown-option'>
+                <input type='checkbox' name='dropdown-group' value=$key>$value</label>";
+            }
+
+            $html_output .= "</div></div>";
+
+            //second dropdown
+
+            $html_output .= "<div class='dropdown' data-control='checkbox-dropdown'><label class='dropdown-label'>Select</label>
+            <div class='dropdown-list'><a href='#' data-toggle='check-all' class='dropdown-option check-all'>Check All </a>";
+
+            foreach ($topic_text as $key => $value) {
+                $html_output .= "<label class='dropdown-option'>
+                <input type='checkbox' name='dropdown-group' value=$key>$value</label>";
+            }
+
+            $html_output .= "</div></div>";
+
+            // Generate the table
+            $html_output .= "<figure class='wp-block-table alignfull'><table><tbody><tr><td></td><td>Sunday</td><td>Monday</td><td>Tuesday</td>
             <td>Wednesday</td><td>Thursday</td><td>Friday</td><td>Saturday</td>";
 
-            $labelling_colours = array('Social' => '#ed1111', 'Talk' => '#06c920', 'Other' => '#959696');
-
             $day_count = 0;
-            //Generate html
+            
             for ($i = 0; $i < 64; $i++) {
                 
                 if ($i % 8 == 0) {
@@ -70,9 +98,12 @@
                     // style=\"background-color: $labelling_colours[$event_category];\ $event[title]"
 
                     foreach ( $events_array[$day_count] as $event ) {
-                        $event_category = $event['category'];
-                        $html_output .= "<div name= \"$event[category]\"> <a href=\"$event[link]\">$event[title]</a><br>
-                        $event[start_time]-$event[end_time] <div class=\"boxlabel\" style=\"background-color: $labelling_colours[$event_category];\"></div></div>";
+                        $descriptors = $event['descriptors'];
+                        $type = $descriptors[1];
+                        $topic = $descriptors[0];
+                        $html_output .= "<div class= '$descriptors[0] $descriptors[1]'> <a href='$event[link]'>$event[title]</a><br>
+                        $event[start_time]-$event[end_time] <br> $topic_text[$topic] <div class='boxlabel' style='background-color: $labelling_colours[$type];'>
+                        </div></div>";
                     }
 
                     $html_output .= "</td>";

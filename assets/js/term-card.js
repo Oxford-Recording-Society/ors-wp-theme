@@ -1,5 +1,6 @@
 jQuery(document).ready(function( $ ){
-    var CheckboxDropdown = function(el) {
+
+  var CheckboxDropdown = function(el) {
     var _this = this;
     this.isOpen = false;
     this.areAllChecked = false;
@@ -7,6 +8,9 @@ jQuery(document).ready(function( $ ){
     this.$label = this.$el.find('.dropdown-label');
     this.$checkAll = this.$el.find('[data-toggle="check-all"]').first();
     this.$inputs = this.$el.find('[type="checkbox"]');
+
+    // All checked initially
+    this.$inputs.prop('checked', true);
     
     this.onCheckBox();
     
@@ -31,14 +35,33 @@ jQuery(document).ready(function( $ ){
   
   CheckboxDropdown.prototype.updateStatus = function() {
     var checked = this.$el.find(':checked');
-    var inputs = this.$el.find('[type="checkbox"]');
+    
    	
-    for (var cat of Object.values(inputs)) {
-      if (Object.values(checked).includes(cat)) {
-       	$('div[name=' + cat.value + ']').show();
-      }
-      else {
-        $('div[name=' + cat.value + ']').hide();
+    // for (var cat of Object.values(inputs)) {
+    //   if (Object.values(checked).includes(cat)) {
+    //    	$('div[name=' + cat.value + ']').show();
+    //   }
+    //   else {
+    //     $('div[name=' + cat.value + ']').hide();
+    //   }
+    // }
+
+    
+    for (const option of this.$el.find(':not(:checked)')) {
+      $('.' + option.value).hide();
+    }
+    for (const option of this.$el.find(':checked')) {
+      $('.' + option.value).show();
+    }
+
+    const $dropdowns = $("[data-control='checkbox-dropdown']");
+    for (const dropdown of $dropdowns) {
+      var $dd = $(dropdown);
+      if ($dd != this.$el) {
+        var $unchecked = $dd.find(':not(:checked)');
+        for (const option of $unchecked) {
+          $('.' + option.value).hide();
+        }
       }
     }
     
@@ -82,6 +105,15 @@ jQuery(document).ready(function( $ ){
     
     if(!this.isOpen || forceOpen) {
        this.isOpen = true;
+       const $dropdowns = $("[data-control='checkbox-dropdown']");
+       for (const dropdown of $dropdowns) {
+        var $dd = $(dropdown);
+        if ($dd != this.$el) {
+          $dd.find('.dropdown-list').addClass('rem');
+          $dd.removeClass('on');
+          $dd.removeClass('rem');
+        }
+       }
        this.$el.addClass('on');
       $(document).on('click', function(e) {
         if(!$(e.target).closest('[data-control]').length) {
