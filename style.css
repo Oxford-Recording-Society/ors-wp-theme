@@ -159,7 +159,7 @@ header{
 .display-posts-listing.grid {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content:flex-start;
+	justify-content:space-around;
 	max-width: 1280px !important;
 }
 
@@ -240,6 +240,16 @@ header{
 	height: 16px;
 	width: 16px;
 	background-size: 16px;
+}
+
+/* WP Ultimate Member overrides */
+/* (some of the customisation is the plugin CSS itself (bc they're already using
+!important), but I can't pull changes to UM yet) */
+.um-item-link a {
+	color: var(--global--color-primary) !important;
+}
+.um-item-link i {
+	color: var(--global--color-light-gray) !important;
 }
 
 /* END ORS CUSTOM RULES */
