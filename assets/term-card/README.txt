@@ -15,10 +15,6 @@ On the WP dashboard navigate to Events -> Event Categories.
 
 Ensure that the following event categories are added and that they are written exactly as stated here:
 
-Topic: Music Events Management
-Topic: Music Business
-Topic: Music Art & Media
-Topic: Music Making & Performing
 Type: Information
 Type: Socials
 Type: Gigs & Performances
@@ -26,6 +22,11 @@ Type: Club Nights
 Type: Workshops
 Type: Panels
 Type: Speakers
+Topic: Music Events Management
+Topic: Music Business
+Topic: Music Art & Media
+Topic: Music Making & Performing
+
 
 2. Before adding society events:
 
