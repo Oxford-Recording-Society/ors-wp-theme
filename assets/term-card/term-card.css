@@ -60,7 +60,7 @@
 }
 .dropdown [type="checkbox"] {
     position: relative;
-    top: -1px;
+    top: 0.25em;
     margin-right: 4px;
 }
 
@@ -74,5 +74,5 @@
    position: relative;
      z-index: -1;
    /* left: 0.5em; */
-     top: 0.125em;
+   top: 0.25em;
 }

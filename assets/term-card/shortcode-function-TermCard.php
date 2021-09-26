@@ -1,3 +1,9 @@
+<!-- 
+    Author: Alexandru G. Apetrei
+    Contact: alex_apetrei@outlook.com
+    Description: A program that utilises functionality from The Events Calendar by Knowledgebase (a wordpress plugin) to generate a term card.
+ -->
+
 <?php
     function Draw_TermCard() {
         $events = tribe_get_events();
@@ -53,6 +59,7 @@
             
             // html output
 
+            // Labelling and text to display
             $labelling_colours = array('type-speakers' => '#6360f4', 'type-panels' => '#140e5f', 'type-workshops' => '#55412e', 
             'type-club-nights' => '#1b8bc3', 'type-gigs-performances' => '#84aa2d', 'type-socials' => '#0c6586', 'type-information' => '#b32593');
 
@@ -71,7 +78,9 @@
 
             foreach ($type_text as $key => $value) {
                 $html_output .= "<label class='dropdown-option'>
-                <input type='checkbox' name='dropdown-group' value=$key>$value</label>";
+                <input type='checkbox' name='dropdown-group' value=$key>$value<div class='boxlabel' style='background-color: $labelling_colours[$key];
+                margin-left: 0.5em;'>
+                </div></label>";
             }
 
             $html_output .= "</div></div>";
@@ -89,7 +98,7 @@
 
             $html_output .= "</div></div>";
 
-            //Generate key
+            //Generate key for the colour coding
             $html_output .= "<div>";
 
             foreach ($type_text as $key => $value) {
@@ -113,15 +122,22 @@
                     $html_output .= "</tr><tr><td>Wk". ($i+8)/8 . "</td>";
                 } else {
                     $html_output .= "<td>";
-                    // style=\"background-color: $labelling_colours[$event_category];\ $event[title]"
-
+                    
                     foreach ( $events_array[$day_count] as $event ) {
                         $descriptors = $event['descriptors'];
-                        $type = $descriptors[1];
-                        $topic = $descriptors[0];
+                        
+                        if (substr($descriptors[0],0,5) == 'topic') {
+                            $topic = $descriptors[0];
+                            $type = $descriptors[1];
+                        
+                        } else {
+                            $type = $descriptors[0];
+                            $topic = $descriptors[1];
+                        }
+                    
                         $html_output .= "<div class= '$descriptors[0] $descriptors[1]'> <a href='$event[link]'>$event[title]</a><br>
-                        $event[start_time]-$event[end_time] <br> <p style='font-size: 75%;'> $topic_text[$topic]</p><div class='boxlabel' style='background-color: $labelling_colours[$type];'>
-                        </div></div>";
+                        $event[start_time]-$event[end_time] <br> <p style='font-size: 75%;'> $topic_text[$topic]</p><div class='boxlabel'
+                        style='background-color: $labelling_colours[$type];'></div></div>";
                     }
 
                     $html_output .= "</td>";

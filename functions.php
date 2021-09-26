@@ -641,24 +641,16 @@ function twentytwentyone_add_ie_class() {
 add_action( 'wp_footer', 'twentytwentyone_add_ie_class' );
 
 
-include( get_stylesheet_directory() . '/shortcode-function-TermCard.php' );
+include( get_stylesheet_directory() . '/assets/term-card/shortcode-function-TermCard.php' );
 
 function external_js() {
-	// Use ID of the page on which the term card is on
-	if (is_page(148)) {
-	  wp_enqueue_script( 'term-card-js', get_template_directory_uri() . '/assets/js/term-card.js');
-	}
+	wp_enqueue_script( 'term-card-js', get_template_directory_uri() . '/assets/term-card/term-card.js');
   }
   
 add_action('wp_enqueue_scripts', 'external_js');
 
 function external_style() {
-
-	if (is_page(148)) {
-		wp_enqueue_style('term-card-style',
-		get_template_directory_uri() . '/assets/css/term-card.css');
-	}
-
+	wp_enqueue_style('term-card-style', get_template_directory_uri() . '/assets/term-card/term-card.css');
 }
 
 add_action('wp_enqueue_scripts', 'external_style');
