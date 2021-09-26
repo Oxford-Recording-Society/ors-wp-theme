@@ -101,8 +101,9 @@
             $html_output .= "</div>";
 
             // Generate the table
-            $html_output .= "<figure class='wp-block-table alignfull'><table><tbody><tr><td></td><td>Sunday</td><td>Monday</td><td>Tuesday</td>
-            <td>Wednesday</td><td>Thursday</td><td>Friday</td><td>Saturday</td>";
+            $html_output .= "<figure class='wp-block-table alignfull'><table><tbody><tr><td style='width:5.5%'></td><td style='width:13.5%'>Sunday</td>
+            <td style='width:13.5%'>Monday</td><td style='width:13.5%'>Tuesday</td><td style='width:13.5%'>Wednesday</td><td style='width:13.5%'>
+            Thursday</td><td style='width:13.5%'>Friday</td><td style='width:13.5%'>Saturday</td>";
 
             $day_count = 0;
             
