@@ -8,10 +8,14 @@
  */
 
 $title = get_the_title();
-$md5 = hash('md5', $title);
-$hex = substr($md5, 0 , 2);
-$val = hexdec($hex);
-$hue = ($val/255) * 360;
+
+function ors_title_to_hue($title) {
+  $md5 = hash('md5', $title);
+  $hex = substr($md5, 0 , 2);
+  $val = hexdec($hex);
+  $hue = ($val/255) * 360;
+  return $hue;
+}
 
 ?>
 <h1 class="header-title">
@@ -30,6 +34,6 @@ for ($x = 0; $x <= 20; $x++) {
 ?></div>
 <style>
 :root{
-  --header-gradient-hue: <?php echo $hue; ?>;
+  --header-gradient-hue: <?php echo ors_title_to_hue($title); ?>;
 }
 </style>
