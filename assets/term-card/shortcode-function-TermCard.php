@@ -133,7 +133,7 @@
                             $topic = $descriptors[1];
                         }
 
-                        $html_output .= "<div class= '$descriptors[0] $descriptors[1]'> <a href='$event[link]'>$event[title]</a><br>
+                        $html_output .= "<div class= '$descriptors[0] $descriptors[1]'> <a href='$event[link]' target='_blank'>$event[title]</a><br>
                         $event[start_time]-$event[end_time] <br> <p style='font-size: 75%;'> $topic_text[$topic]</p><div class='boxlabel'
                         style='background-color: $labelling_colours[$type];'></div></div>";
                     }
