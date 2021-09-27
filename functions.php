@@ -1,5 +1,5 @@
 <?php
- 
+
 /**
  * Functions and definitions
  *
@@ -646,7 +646,7 @@ include( get_stylesheet_directory() . '/assets/term-card/shortcode-function-Term
 function external_js() {
 	wp_enqueue_script( 'term-card-js', get_template_directory_uri() . '/assets/term-card/term-card.js');
   }
-  
+
 add_action('wp_enqueue_scripts', 'external_js');
 
 function external_style() {
@@ -654,3 +654,40 @@ function external_style() {
 }
 
 add_action('wp_enqueue_scripts', 'external_style');
+
+/* ORS CUSTOM ADDITIONS */
+function ors_title_to_hue($title) {
+  $md5 = hash('md5', $title);
+  $hex = substr($md5, 0 , 2);
+  $val = hexdec($hex);
+  $hue = ($val/255) * 360;
+  return $hue;
+}
+
+function ors_draw_outlined_header($title) {
+  echo "<h1 class=\"header-title\">
+		<span class=\"header-title-outline\">
+			$title
+			<br>
+			$title
+			<br>
+		</span>
+		$title
+	</h1>";
+}
+
+function ors_draw_marquee($title) {
+  echo '<div class="header-marquee">';
+  for ($x = 0; $x <= 20; $x++) {
+    echo $title ." // ORS&nbsp;&nbsp;&nbsp;";
+  }
+ echo '</div>';
+}
+
+function ors_output_header_hue($title) {
+	$hue = ors_title_to_hue($title);
+	echo "<style> :root{ --header-gradient-hue: $hue;} </style>";
+}
+
+// Adjust status code returned by WP Maintenance Mode.
+add_filter( 'wpmm_status_code', function () {return 200;} );

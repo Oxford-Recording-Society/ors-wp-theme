@@ -28,7 +28,17 @@
 
 	<div class="entry-content">
 		<?php
-		the_title( '<h2>', '</h2>' );
+		the_title( '<h2 class="ors-opportunity-title">', '</h2>' );
+
+			$authorid = get_the_author_ID();
+			$authoravatar = get_avatar($authorid);
+
+			echo '<h3 class="ors-opportunity-author"><a href="/user/'
+				. get_the_author_nickname() . '">'
+				. $authoravatar
+				. '<span class="author_title">'
+				. get_the_author()
+				. '</span></a></h3>';
 
 		the_content();
 

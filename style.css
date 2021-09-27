@@ -122,7 +122,7 @@ header{
 #main{
 	padding-top: 0;
 }
-.entry-header{
+.entry-header.alignwide, .page-header.alignwide{
 	background-image: linear-gradient(180deg, hsl(var(--header-gradient-hue),77%,56%) 31%, hsl(calc(var(--header-gradient-hue) - 36),89%,60%));
 	/* background-image: linear-gradient(180deg, hsl(24,77%,56%) 31%, hsl(348,89%,60%)); */
 	padding-top:225px; /*to fit the navbar*/
@@ -155,7 +155,7 @@ header{
 	text-transform: uppercase;
 }
 
-/* Projects list (table) */
+/* Projects/opportunities list (table) */
 .display-posts-listing.grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -167,8 +167,10 @@ header{
 	border: solid 1px #fff;
 	border-bottom-left-radius: 20px;
 	margin:8px;
-	padding: 10px 12px;
+	padding: 10px 12px 3px;
 	width:400px;
+	display: flex;
+	flex-direction: column;
 }
 
 .display-posts-listing.grid .title {
@@ -219,6 +221,21 @@ header{
 	line-height: 19px;
 	font-weight: 300;
 	text-align: justify;
+	flex-grow: 1;
+}
+
+.display-posts-listing .category-display {
+	order: 10;
+	align-self: stretch;
+	border-top: dashed 1px #fff;
+	text-align: right;
+	margin-top: 15px;
+}
+.display-posts-listing .category-display a {
+	text-decoration: none;
+}
+.display-posts-listing .category-display a:hover {
+	text-decoration: underline;
 }
 
 /* Members list college styling*/
@@ -240,6 +257,30 @@ header{
 	height: 16px;
 	width: 16px;
 	background-size: 16px;
+}
+
+
+.ors-opportunity-author a {
+	text-decoration: none;
+	font-family: var(--font-base);
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+.ors-opportunity-author a:hover {
+	text-decoration: underline;
+}
+h2.ors-opportunity-title{
+	margin-bottom: 0;
+}
+h3.ors-opportunity-author{
+	margin-top: 0;
+}
+.ors-opportunity-author img {
+	height: 2.5rem;
+	width: 2.5rem;
+	border-radius: 50%;
+	margin-right: 8px;
+	background-color: white;
 }
 
 /* WP Ultimate Member overrides */
@@ -4277,7 +4318,7 @@ table.wp-calendar-table caption {
 	color: var(--wp--style--color--link, var(--global--color-white));
 }
 
-.singular .entry-header {
+.entry-header.alignwide, .page-header.alignwide {
 	/* border-bottom: 3px solid var(--global--color-border); */
 	/* padding-bottom: calc(2 * var(--global--spacing-vertical)); */
 	margin-bottom: calc(3 * var(--global--spacing-vertical));
@@ -4513,6 +4554,7 @@ h2.page-title {
 
 h1.page-title {
 	line-height: var(--heading--line-height-h1);
+	text-align: center;
 }
 
 .page-header {
