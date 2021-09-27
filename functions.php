@@ -688,3 +688,6 @@ function ors_output_header_hue($title) {
 	$hue = ors_title_to_hue($title);
 	echo "<style> :root{ --header-gradient-hue: $hue;} </style>";
 }
+
+// Adjust status code returned by WP Maintenance Mode.
+add_filter( 'wpmm_status_code', function () {return 200;} );
