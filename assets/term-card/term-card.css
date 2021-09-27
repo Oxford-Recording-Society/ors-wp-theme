@@ -1,12 +1,10 @@
-* {
-    box-sizing: border-box;
-}
 .check-all {
     text-decoration: none;
     color:  #FF0000;
 }
 
 .dropdown {
+    box-sizing: border-box;
     position: relative;
     font-size: 14px;
     color: #333;
@@ -62,6 +60,10 @@
     position: relative;
     top: 0.25em;
     margin-right: 4px;
+}
+
+.is-dark-theme .dropdown [type="checkbox"] {
+    border:  3px solid black;
 }
 
 /* CSS for Colour Label */
