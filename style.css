@@ -155,7 +155,7 @@ header{
 	text-transform: uppercase;
 }
 
-/* Projects list (table) */
+/* Projects/opportunities list (table) */
 .display-posts-listing.grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -169,6 +169,8 @@ header{
 	margin:8px;
 	padding: 10px 12px;
 	width:400px;
+	display: flex;
+	flex-direction: column;
 }
 
 .display-posts-listing.grid .title {
@@ -219,6 +221,21 @@ header{
 	line-height: 19px;
 	font-weight: 300;
 	text-align: justify;
+	flex-grow: 1;
+}
+
+.display-posts-listing .category-display {
+	order: 10;
+	align-self: stretch;
+	border-top: dashed 1px #fff;
+	text-align: right;
+	margin-top: 15px;
+}
+.display-posts-listing .category-display a {
+	text-decoration: none;
+}
+.display-posts-listing .category-display a:hover {
+	text-decoration: underline;
 }
 
 /* Members list college styling*/
@@ -240,6 +257,30 @@ header{
 	height: 16px;
 	width: 16px;
 	background-size: 16px;
+}
+
+
+.ors-opportunity-author a {
+	text-decoration: none;
+	font-family: var(--font-base);
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+.ors-opportunity-author a:hover {
+	text-decoration: underline;
+}
+h2.ors-opportunity-title{
+	margin-bottom: 0;
+}
+h3.ors-opportunity-author{
+	margin-top: 0;
+}
+.ors-opportunity-author img {
+	height: 2.5rem;
+	width: 2.5rem;
+	border-radius: 50%;
+	margin-right: 8px;
+	background-color: white;
 }
 
 /* WP Ultimate Member overrides */
