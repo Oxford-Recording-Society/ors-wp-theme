@@ -11,16 +11,25 @@
 
 get_header();
 
+$title = get_the_archive_title();
+$short_title = $title;
+if ( is_category() ) {
+	$short_title = single_cat_title( '', false );
+}
 $description = get_the_archive_description();
 ?>
 
 <?php if ( have_posts() ) : ?>
 
-	<header class="page-header alignwide">
-		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+	<header class="entry-header alignwide">
+		<?php
+			ors_draw_outlined_header($short_title);
+			ors_output_header_hue($title);
+		?>
 		<?php if ( $description ) : ?>
 			<div class="archive-description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
 		<?php endif; ?>
+		<?php ors_draw_marquee($title); ?>
 	</header><!-- .page-header -->
 
 	<?php while ( have_posts() ) : ?>
