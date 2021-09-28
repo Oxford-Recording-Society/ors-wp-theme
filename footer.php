@@ -53,6 +53,11 @@
 					<?php endif; ?>
 				<?php endif; ?>
 			</div><!-- .site-name -->
+			<div class="powered-by">
+				Welcome to ORS! This site is still under development, so things might not be 100% stable right now.
+				If you find anything wrong, or have other feedback, please
+				<a href="https://forms.office.com/r/xyhn6mxSr7" target="_blank">let us know here</a>.
+			</div><!-- .powered-by -->
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 

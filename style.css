@@ -286,11 +286,18 @@ h3.ors-opportunity-author{
 /* WP Ultimate Member overrides */
 /* (some of the customisation is the plugin CSS itself (bc they're already using
 !important), but I can't pull changes to UM yet) */
-.um-item-link a {
+.um-item-link a, .um-meta-text {
 	color: var(--global--color-primary) !important;
 }
 .um-item-link i {
 	color: var(--global--color-light-gray) !important;
+}
+
+.um-profile .um-field a{
+	text-decoration: underline !important;
+}
+.um-profile .um-field a:hover{
+	text-decoration: underline dotted !important;
 }
 
 /* END ORS CUSTOM RULES */
@@ -558,8 +565,8 @@ h3.ors-opportunity-author{
 	--footer--color-text: var(--global--color-primary);
 	--footer--color-link: var(--global--color-primary);
 	--footer--color-link-hover: var(--global--color-primary-hover);
-	--footer--font-family: var(--global--font-primary);
-	--footer--font-size: var(--global--font-size-sm);
+	--footer--font-family: var(--global--font-secondary);
+	--footer--font-size: 0.8rem;
 
 	/* Block: Pull quote */
 	--pullquote--font-family: var(--global--font-primary);
@@ -4289,6 +4296,8 @@ table.wp-calendar-table caption {
 	.site-footer > .site-info .powered-by {
 		margin-top: initial;
 		margin-left: auto;
+		max-width: 750px;
+		text-align: right;
 	}
 }
 
