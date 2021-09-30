@@ -42,7 +42,13 @@
 		<div class="site-info">
 			<div class="site-name">
 				<?php if ( has_custom_logo() ) : ?>
-					<div class="site-logo"><?php the_custom_logo(); ?></div>
+					<div class="site-logo">
+						<?php the_custom_logo(); ?>
+						<div class="ors-footer-socials">
+							<a href="https://facebook.com/oxfordrecordingsoc/" target="_blank"><img src="/images/socials/facebook-square-brands.svg" height="32px" /></a>
+							<a href="https://www.instagram.com/oxfordrecordingsoc/" target="_blank"><img src="/images/socials/instagram-brands.svg" height="32px" /></a>
+						</div>
+					</div>
 				<?php else : ?>
 					<?php if ( get_bloginfo( 'name' ) && get_theme_mod( 'display_title_and_tagline', true ) ) : ?>
 						<?php if ( is_front_page() && ! is_paged() ) : ?>

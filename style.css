@@ -300,6 +300,23 @@ h3.ors-opportunity-author{
 	text-decoration: underline dotted !important;
 }
 
+/* Footer socials */
+.ors-footer-socials {
+	display: inline-flex;
+	gap: 10px;
+}
+
+.ors-footer-socials img{
+  height:32px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  transition: filter 100ms;
+}
+.ors-footer-socials img:hover{
+  -webkit-filter: invert(.8);
+  filter: invert(.8);
+}
+
 /* END ORS CUSTOM RULES */
 
 /**
