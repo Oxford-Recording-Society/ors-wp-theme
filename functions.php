@@ -77,6 +77,9 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 				'primary' => esc_html__( 'Header menu (left)', 'twentytwentyone' ),
 				'secondary' => esc_html__( 'Header menu (right)', 'twentytwentyone' ),
 				'footer'  => __( 'Footer menu', 'twentytwentyone' ),
+				// 'footer1'  => __( 'Footer menu 1 (\'Useful links\')', 'twentytwentyone' ),
+				// 'footer2'  => __( 'Footer menu 2 (\'For students\')', 'twentytwentyone' ),
+				// 'footer3'  => __( 'Footer menu 3 (\'External information\')', 'twentytwentyone' ),
 			)
 		);
 
