@@ -313,7 +313,7 @@ h3.ors-opportunity-author{
 .ors-footer-links li {
 	display: block;
 	font-family: Roboto Mono, monospace;
-	font-size: 0.875rem;
+	font-size: 0.8rem;
 	font-weight: 400;
 	white-space: nowrap;
 	text-decoration: none;
@@ -322,6 +322,7 @@ h3.ors-opportunity-author{
 .ors-footer-links li a {
 	color: var(--global--color-light-gray);
 	text-decoration: none;
+	transition: color 100ms ease-out;
 }
 
 .ors-footer-socials {
@@ -504,7 +505,7 @@ h3.ors-opportunity-author{
 	--global--color-black: #000;
 	--global--color-dark-gray: #28303d;
 	--global--color-gray: #39414d;
-	--global--color-light-gray: #a7a7a7;
+	--global--color-light-gray: #777;
 	--global--color-green: #d1e4dd;
 	--global--color-blue: #d1dfe4;
 	--global--color-purple: #d1d1e4;
@@ -4352,6 +4353,7 @@ table.wp-calendar-table caption {
 	margin-top: calc(0.5 * var(--global--spacing-vertical));
 	border-top: solid 1px var(--global--color-white);
 	padding-top: 12px;
+	font-size: 0.8rem;
 }
 
 .site-footer > .site-info .custom-logo {

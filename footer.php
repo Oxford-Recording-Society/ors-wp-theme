@@ -22,9 +22,11 @@
 		<div class="site-info">
 			<div class="site-name">
 				<?php if ( has_custom_logo() ) : ?>
-					<div class="site-logo">
-						<?php the_custom_logo(); ?>
-					</div>
+					<a href="/">
+						<div class="site-logo">
+							<?php the_custom_logo(); ?>
+						</div>
+					</a>
 				<?php else : ?>
 					<?php if ( get_bloginfo( 'name' ) && get_theme_mod( 'display_title_and_tagline', true ) ) : ?>
 						<?php if ( is_front_page() && ! is_paged() ) : ?>
@@ -36,14 +38,14 @@
 				<?php endif; ?>
 			</div><!-- .site-name -->
 
-			<?php if ( has_nav_menu( 'footer' ) ) : ?>
+			<?php if ( has_nav_menu( 'footer1' ) ) : ?>
 			<nav aria-label="<?php esc_attr_e( 'Secondary menu', 'twentytwentyone' ); ?>" class="footer-navigation">
 				<h3 class="footer-navigation-header">// Useful Links</h3>
 				<ul class="ors-footer-links">
 					<?php
 					wp_nav_menu(
 						array(
-							'theme_location' => 'footer',
+							'theme_location' => 'footer1',
 							'items_wrap'     => '%3$s',
 							'container'      => false,
 							'depth'          => 1,
@@ -56,14 +58,14 @@
 				</ul><!-- .footer-navigation-wrapper -->
 			</nav><!-- .footer-navigation -->
 		<?php endif; ?>
-		<?php if ( has_nav_menu( 'footer' ) ) : ?>
+		<?php if ( has_nav_menu( 'footer2' ) ) : ?>
 			<nav aria-label="<?php esc_attr_e( 'Secondary menu', 'twentytwentyone' ); ?>" class="footer-navigation">
 				<h3 class="footer-navigation-header">// For Students</h3>
 				<ul class="ors-footer-links">
 					<?php
 					wp_nav_menu(
 						array(
-							'theme_location' => 'footer',
+							'theme_location' => 'footer2',
 							'items_wrap'     => '%3$s',
 							'container'      => false,
 							'depth'          => 1,
@@ -76,14 +78,14 @@
 				</ul><!-- .footer-navigation-wrapper -->
 			</nav><!-- .footer-navigation -->
 		<?php endif; ?>
-		<?php if ( has_nav_menu( 'footer' ) ) : ?>
+		<?php if ( has_nav_menu( 'footer3' ) ) : ?>
 			<nav aria-label="<?php esc_attr_e( 'Secondary menu', 'twentytwentyone' ); ?>" class="footer-navigation">
 				<h3 class="footer-navigation-header">// External Information</h3>
 				<ul class="ors-footer-links">
 					<?php
 					wp_nav_menu(
 						array(
-							'theme_location' => 'footer',
+							'theme_location' => 'footer3',
 							'items_wrap'     => '%3$s',
 							'container'      => false,
 							'depth'          => 1,
