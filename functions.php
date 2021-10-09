@@ -694,3 +694,12 @@ function ors_output_header_hue($title) {
 
 // Adjust status code returned by WP Maintenance Mode.
 add_filter( 'wpmm_status_code', function () {return 200;} );
+
+// Adjust return URL from registration form (so we can echo the email address)
+add_filter( 'um_registration_pending_user_redirect', 'my_registration_pending_user_redirect', 10, 3 );
+function my_registration_pending_user_redirect( $url, $status, $user_id ) {
+	$user = get_user_by('id', $user_id);
+	var_dump($email);
+	$email = $user->user_email;
+	return "/register-pending?email=".urlencode_deep($email);
+}
