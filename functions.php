@@ -703,3 +703,27 @@ function my_registration_pending_user_redirect( $url, $status, $user_id ) {
 	$email = $user->user_email;
 	return "/register-pending?email=".urlencode_deep($email);
 }
+
+// Block email domains that aren't ox.ac.uk or SAE
+add_action('um_submit_form_errors_hook_','um_custom_validate_username', 999, 1);
+function um_custom_validate_username( $args ) {
+
+	// VVV add more domains here VVV
+	$allowed_domains =  array('ox.ac.uk', 'sae.edu');
+
+	if(! isset( $args['user_email'] )){ return; }
+	$user_email = $args['user_email'];
+
+	$allowed = false;
+
+	foreach ($allowed_domains as $domain) {
+		if (strrpos($user_email, $domain) === strlen($user_email) - strlen($domain)) {
+			$allowed = true;
+			break;
+		}
+	}
+
+	if (!$allowed) {
+		UM()->form()->add_error( 'user_email', 'Your must use your university/institution email address.' );
+	}
+}
