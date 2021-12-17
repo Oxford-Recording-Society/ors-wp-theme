@@ -300,6 +300,36 @@ h3.ors-opportunity-author{
 	text-decoration: underline dotted !important;
 }
 
+
+/* UM member directory - converting to flexbox*/
+.um-directory{
+	max-width: 1000px !important;
+	padding: 0 20px;
+}
+.um-directory .um-members-wrapper .um-members {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: 20px !important;
+	align-items: flex-start;
+	height: unset !important;
+}
+
+.um-members.um-members-grid .um-member {
+	width: 300px !important;
+	position: relative !important;
+	left: 0 !important;
+	top: 0 !important;
+}
+.um-members-grid>.um-clear, .um-members-grid>.um-gutter-sizer {
+	display: none; /*hide gutter bars, use padding instead*/
+}
+
+.um-directory .um-member-directory-header .um-member-directory-header-row.um-member-directory-search-row {
+	justify-content: flex-start !important;
+}
+
+
 /* Footer */
 .site-info .footer-navigation{
 	padding-left: 50px;
