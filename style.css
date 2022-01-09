@@ -283,6 +283,15 @@ h3.ors-opportunity-author{
 	background-color: white;
 }
 
+/* opportunities feed 2 (custom facebook feeds) */
+.cff-wrapper{
+	max-width: 1000px !important;
+}
+#cff .cff-shared-link {
+	background-color: #232a46  !important;
+	border-bottom: solid 2px #555 !important;
+}
+
 /* WP Ultimate Member overrides */
 /* (some of the customisation is the plugin CSS itself (bc they're already using
 !important), but I can't pull changes to UM yet) */
